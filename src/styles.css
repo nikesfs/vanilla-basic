@@ -1,21 +1,24 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
+body{
+background-color: rgb(148, 25, 107);
+}
+#content{
+	display: block;
+	container-type:inline-size;
+	margin: 100px auto 0 auto;
+	padding: 5%;
+	width: 600px;
+	border: 2px solid rgb(148, 25, 107);
+    border-radius: 25px;
+	background-color: white;
+}
+p{
+	font-family: tahoma;
 }
 
-html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
+img{
+	margin: 0 auto 0 auto;
+	display: block;
 }
-
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
-}
-
-main > h1 {
-  text-align: center;
-  font-size: 3.5em;
+pre{
+margin: 0% 9%;
 }
