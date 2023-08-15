@@ -14,13 +14,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Hey JB!</title>
+  <title>.Net Guild Day Countdown timer</title>
 </head>
 
 <body>
-  <main>
-    <h1>Hey JB!</h1>
-  </main>
+<div id="content" >
+<div>
+<pre>
+    _   _      _      _____       _ _     _   _____              _ 
+   | \ | |    | |    / ____|     (_) |   | | |  __ \            | |
+   |  \| | ___| |_  | |  __ _   _ _| | __| | | |  | | __ _ _   _| |
+   | . ` |/ _ \ __| | | |_ | | | | | |/ _` | | |  | |/ _` | | | | |
+  _| |\  |  __/ |_  | |__| | |_| | | | (_| | | |__| | (_| | |_| |_|
+ (_)_| \_|\___|\__|  \_____|\__,_|_|_|\__,_| |_____/ \__,_|\__, (_)
+                                                            __/ |  
+                                                           |___/   
+</pre>
+</div>
+<p id="Copilot" data="The era of the AI Copilot"></p>
+<p id="NET8" data="What's new in .NET 8"></p>
+<p id="tips" data="Advanced developer tips and tricks in Visual Studio"></p>
+<p id="Lunch" data="Lunch"></p>
+<p id="containers" data="Modernizing your applications with containers and serverless"></p>
+<p id="CloudNative" data="Cloud-native development with .NET 8"></p>
+</div>
+<script>
+	var Copilot = new Date("Aug 15, 2023 10:00:00").getTime();
+	var NET8 = new Date("Aug 15, 2023 11:00:00").getTime();
+	var tips = new Date("Aug 15, 2023 12:00:00").getTime();
+	var Lunch = new Date("Aug 15, 2023 13:00:00").getTime();
+	var containers = new Date("Aug 15, 2023 14:00:00").getTime();
+	var CloudNative = new Date("Aug 15, 2023 15:00:00").getTime();
+
+	var dates = [Copilot,NET8,tips,Lunch,containers,CloudNative];
+	var divs = ["Copilot","NET8","tips","Lunch","containers","CloudNative"];
+
+	var x = setInterval(function() {
+	var now = new Date().getTime();
+
+	  
+		function distance(date)
+		{
+		return date - now;
+		}
+
+		for(let i=0;i<dates.length; i++)
+			{
+				var days = Math.floor(distance(dates[i]) / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance(dates[i]) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance(dates[i]) % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance(dates[i]) % (1000 * 60)) / 1000);
+				document.getElementById(divs[i]).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s - " + document.getElementById(divs[i]).getAttribute("data"); 
+
+				var divText = document.getElementById(divs[i]).innerText;
+
+				if(divText.includes("-1d"))
+				{
+					document.getElementById(divs[i]).setAttribute("hidden",true);
+				}
+			
+			}
+		
+		
+	}, 1000);
+</script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HXK1XER0B0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HXK1XER0B0');
+</script>
 </body>
+</html>
 
 </html>
